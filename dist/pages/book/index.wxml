@@ -1,0 +1,11 @@
+<view class="db_book">
+    <view class="db_book-top">
+        <view class="left">
+            <view class="title">book</view>
+            <!-- <view class="search" bind:tap="handleLinkSearch">search</view> -->
+        </view>
+    </view>
+    <view class="db_book-container">
+        <view>1</view>
+    </view>
+</view>

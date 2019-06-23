@@ -1,0 +1,21 @@
+<view class="db_movie">
+    <view class="db_movie-top">
+        <view class="left">
+            <view class="title">movie</view>
+        </view>
+        <!-- <view class="right"></view> -->
+    </view>
+    <view class="db_movie-container">
+        <view class="db_movie-list">
+            <view class="item db_movie-item" wx:for="{{theaters}}" wx:for-item="item">
+                <view class="cover">
+                    <image style="background-color: #eeeeee;" mode="aspectFill" src="{{item.images.small}}"></image>
+                </view>
+                <view class="desc">
+                    <view class="title">{{item.title}}</view>
+                    <view class="rating">{{item.rating.average}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

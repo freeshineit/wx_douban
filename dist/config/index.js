@@ -1,0 +1,6 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.APIKEY = '0df993c66c0c636e29ecbb5344252a4a';
+exports.BASEHONST = 'http://localhost:3000';
+
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbmZpZy9pbmRleC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFhLFFBQUEsTUFBTSxHQUFHLGtDQUFrQyxDQUFBO0FBRTNDLFFBQUEsU0FBUyxHQUFHLHVCQUF1QixDQUFBIiwiZmlsZSI6ImNvbmZpZy9pbmRleC5qcyIsInNvdXJjZXNDb250ZW50IjpbImV4cG9ydCBjb25zdCBBUElLRVkgPSAnMGRmOTkzYzY2YzBjNjM2ZTI5ZWNiYjUzNDQyNTJhNGEnXG5cbmV4cG9ydCBjb25zdCBCQVNFSE9OU1QgPSAnaHR0cDovL2xvY2FsaG9zdDozMDAwJ1xuLy8gZXhwb3J0IGNvbnN0IEJBU0VIT05TVCA9ICdodHRwczovL2RvdWJhbi51aWVlZS5jb20nXG4iXX0=

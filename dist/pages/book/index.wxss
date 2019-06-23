@@ -1,0 +1,6 @@
+.db_book-top {
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
