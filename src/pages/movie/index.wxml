@@ -1,7 +1,7 @@
 <view class="db_movie">
     <view class="db_movie-top">
         <view class="left">
-            <view class="title">movie</view>
+            <view class="title">电影</view>
         </view>
         <!-- <view class="right"></view> -->
     </view>

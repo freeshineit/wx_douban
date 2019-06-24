@@ -1,13 +1,13 @@
 <view class="db_movie">
     <view class="db_movie-top">
         <view class="left">
-            <view class="title">movie</view>
+            <view class="title">电影</view>
         </view>
         <!-- <view class="right"></view> -->
     </view>
     <view class="db_movie-container">
         <view class="db_movie-list">
-            <view class="item db_movie-item" wx:for="{{theaters}}" wx:for-item="item">
+            <view class="item db_movie-item" wx:for="{{theaters}}" wx:for-item="item" wx:key="{{item.id}}">
                 <view class="cover">
                     <image style="background-color: #eeeeee;" mode="aspectFill" src="{{item.images.small}}"></image>
                 </view>

@@ -6,6 +6,16 @@
         </view>
     </view>
     <view class="db_book-container">
-        <view>1</view>
+        <view class="db_book-list">
+            <view class="item db_book-item" wx:for="{{theaters}}" wx:for-item="item" wx:key="{{item.id}}">
+                <view class="cover">
+                    <image style="background-color: #eeeeee;" mode="aspectFill" src="{{item.images.small}}"></image>
+                </view>
+                <view class="desc">
+                    <view class="title">{{item.title}}</view>
+                    <view class="rating">{{item.rating.average}}</view>
+                </view>
+            </view>
+        </view>
     </view>
 </view>
