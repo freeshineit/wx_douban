@@ -113,12 +113,12 @@ npm run build
 - [ ] /v2/book/series/:id/books
 - [ ] /v2/book/:id/collection [POST]
 - [ ] /v2/book/:id/collection [PUT]
-- [ ]/v2/book/:id/collection [DELETE]
+- [ ] /v2/book/:id/collection [DELETE]
 - [ ] /v2/book/:id/annotations [POST]
 - [ ] /v2/book/annotation/:id [PUT]
 - [ ] /v2/book/annotation/:id [DELETE]
 - [ ] /v2/book/reviews [POST]
-- [ ]/v2/book/review/:id [PUT]
+- [ ] /v2/book/review/:id [PUT]
 - [ ] /v2/book/review/:id [DELETE]
 - [ ] /v2/book/user_tags/:id [GET](deprecated)
 

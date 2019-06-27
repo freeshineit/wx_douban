@@ -20,9 +20,12 @@ methods.forEach(item => {
         _options = Object.assign(_options, options)
       }
 
-      data = {
-        apikey: APIKEY
-      }
+      data = Object.assign(
+        {
+          apikey: APIKEY
+        },
+        data
+      )
 
       const requestOptions = Object.assign(
         {

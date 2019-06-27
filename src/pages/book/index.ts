@@ -1,27 +1,62 @@
 //index.js
 //获取应用实例
 
-// import Request from '../../utils/request'
-
+import Request from '../../utils/request'
 Page({
   data: {
-    theaters: []
+    books: [],
+    total: 0,
+    start: 0,
+    count: 10,
+    q: '',
+    loading: false
   },
-  //事件处理函数
-  handleLinkSearch() {
-    // wx.navigateTo({
-    //   url: '../search/index'
-    // })
+  //   跳转到详情页
+  handeLinkDetail(e: any) {
+    const id = e.currentTarget.dataset.id
+    wx.navigateTo({
+      url: `../book_detail/index?id=${id}`
+    })
   },
-
-  getIndexData() {
-    // Request.get(
-    //   '/v2/movie/in_theaters?apikey=0df993c66c0c636e29ecbb5344252a4a'
-    // ).then((res: any) => {
-    //   console.log(res.data)
-    // })
+  handleformSubmit(event: any) {
+    this.setData!(
+      {
+        q: event.detail.value,
+        start: 0,
+        books: []
+      },
+      () => {
+        this.getBooks()
+      }
+    )
   },
-  onLoad() {
-    this.getIndexData()
+  getBooks() {
+    const { books, start, count, q } = this.data
+    if (q === '' || q === undefined) {
+      console.error('搜索必须要有内容')
+      return
+    }
+    this.setData!({
+      loading: true
+    })
+    Request.get(`/v2/book/search`, {
+      q: q,
+      start,
+      count
+    }).then((res: any) => {
+      this.setData!({
+        books: books.concat(res.data.books),
+        total: res.data.total,
+        start: count + start,
+        loading: false
+      })
+    })
+  },
+  onLoad() {},
+  onReachBottom() {
+    const { loading, start, count, total } = this.data
+    if (!loading && start + count < total) {
+      this.getBooks()
+    }
   }
 })
