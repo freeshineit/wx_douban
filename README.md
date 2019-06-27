@@ -94,3 +94,32 @@ npm run build
 ## api 规范
 
 <!-- https://segmentfault.com/a/1190000018716657 -->
+
+### movie api
+
+### book api
+
+- [x] /v2/book/search
+- [x] /v2/book/:id
+- [ ] /v2/book/isbn/:name
+- [ ] /v2/book/:id/tags
+- [ ] /v2/book/user/:name/tags
+- [ ] /v2/book/user/:name/collections
+- [ ] /v2/book/:id/collection
+- [ ] /v2/book/user/:name/annotations
+- [ ] /v2/book/:id/annotations
+- [ ] /v2/book/annotation/:id
+- [ ] /v2/book/annotation/:id
+- [ ] /v2/book/series/:id/books
+- [ ] /v2/book/:id/collection [POST]
+- [ ] /v2/book/:id/collection [PUT]
+- [ ]/v2/book/:id/collection [DELETE]
+- [ ] /v2/book/:id/annotations [POST]
+- [ ] /v2/book/annotation/:id [PUT]
+- [ ] /v2/book/annotation/:id [DELETE]
+- [ ] /v2/book/reviews [POST]
+- [ ]/v2/book/review/:id [PUT]
+- [ ] /v2/book/review/:id [DELETE]
+- [ ] /v2/book/user_tags/:id [GET](deprecated)
+
+### music api
