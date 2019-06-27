@@ -97,6 +97,21 @@ npm run build
 
 ### movie api
 
+- [x] /v2/movie/in_theaters
+- [ ] /v2/movie/top250
+- [ ] /v2/movie/us_box
+- [ ] /v2/movie/weekly
+- [ ] /v2/movie/new_movies
+- [ ] /v2/movie/coming_soon
+- [ ] /v2/movie/subject/:id
+- [ ] /v2/movie/celebrity/:id
+- [ ] /v2/movie/subject/:id/photos
+- [ ] /v2/movie/subject/:id/reviews
+- [ ] /v2/movie/subject/:id/comments
+- [ ] /v2/movie/celebrity/:id/works
+- [ ] /v2/movie/celebrity/:id/photos
+- [ ] /v2/movie/search?q={text}
+
 ### book api
 
 - [x] /v2/book/search
