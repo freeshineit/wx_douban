@@ -4,6 +4,7 @@
     "pages/book_detail/index",
     "pages/movie/index",
     "pages/music/index",
+    "pages/music_detail/index",
     "pages/profile/index",
     "pages/search/index"
   ],
