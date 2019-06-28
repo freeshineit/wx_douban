@@ -5,14 +5,18 @@
   width: 100%;
   background: #fff;
   box-shadow: 0 1rpx 8rpx #eee;
-  height: 80rpx;
-  display: flex;
-  align-items: center;
+  height: 160rpx;
 }
 .db_music-top .content {
   padding-left: 40rpx;
   padding-right: 40rpx;
   width: 100%;
+}
+.db_music-top .content .form {
+  margin-bottom: 10rpx;
+  width: 100%;
+  height: auto;
+  display: block;
 }
 .db_music-top .content .form .search-input {
   border: 1rpx solid #aaa;
@@ -20,23 +24,46 @@
   padding: 5rpx 10rpx;
   font-size: 24rpx;
 }
+.db_music-top .content .scroll-view_H {
+  white-space: nowrap;
+  font-size: 24rpx;
+  color: #333;
+  width: 100%;
+  height: 60rpx;
+}
+.db_music-top .content .scroll-view_H .item {
+  padding: 8rpx 10rpx;
+  height: 60rpx;
+  display: inline-block;
+  margin-left: 10rpx;
+  display: inline-flex;
+  align-items: center;
+  text-align: center;
+}
+.db_music-top .content .scroll-view_H .item.tag-active {
+  color: #42bd56;
+}
 .db_music-container {
-  padding-top: 88rpx;
+  padding-top: 168rpx;
 }
 .db_music-list {
   display: flex;
   flex-wrap: wrap;
 }
 .db_music-list .item {
-  width: 44%;
-  margin: 0rpx 3% 30rpx;
+  width: 33.333%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 20rpx;
 }
 .db_music-list .item .cover {
-  height: 474rpx;
+  height: 226rpx;
+  width: 90%;
 }
 .db_music-list .item .cover image {
   width: 100%;
-  height: 474rpx;
+  height: 100%;
 }
 .db_music-list .item .desc {
   font-size: 24rpx;
