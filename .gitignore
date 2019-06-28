@@ -11,6 +11,6 @@ $RECYCLE.BIN/
 .Trashes
 
 project.config.json
-
+dist/
 # Node.js
 node_modules/
