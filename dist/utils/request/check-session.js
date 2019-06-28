@@ -1,6 +1,0 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-function checkSession() { }
-exports.checkSession = checkSession;
-
-//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInV0aWxzL3JlcXVlc3QvY2hlY2stc2Vzc2lvbi50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUdBLFNBQWdCLFlBQVksS0FBUyxDQUFDO0FBQXRDLG9DQUFzQyIsImZpbGUiOiJ1dGlscy9yZXF1ZXN0L2NoZWNrLXNlc3Npb24uanMiLCJzb3VyY2VzQ29udGVudCI6WyIvLyBpbXBvcnQgeyBkb0xvZ2luIH0gZnJvbSAnLi4vLi4vYXBpL2xvZ2luJ1xuLy8gaW1wb3J0IHsgU0VTU0lPTl9LRVkgfSBmcm9tICcuLi8uLi9jb25maWcvZ2xvYmFsLWNvbmZpZydcblxuZXhwb3J0IGZ1bmN0aW9uIGNoZWNrU2Vzc2lvbigpOiBhbnkge31cbiJdfQ==

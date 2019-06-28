@@ -1,11 +1,11 @@
 //index.js
 //获取应用实例
 
-import Request from '../../utils/request'
+// import Request from '../../utils/request'
 
 Page({
   data: {
-    theaters: [],
+    detail: [],
     total: 0,
     title: ''
   },
@@ -17,13 +17,13 @@ Page({
   },
 
   getIndexData() {
-    Request.get('/v2/movie/in_theaters').then((res: any) => {
-      this.setData!({
-        theaters: res.data.subjects,
-        title: res.data.title,
-        total: res.data.total
-      })
-    })
+    // Request.get('/v2/movie/in_theaters').then((res: any) => {
+    //   this.setData!({
+    //     theaters: res.data.subjects,
+    //     title: res.data.title,
+    //     total: res.data.total
+    //   })
+    // })
   },
   onLoad() {
     this.getIndexData()

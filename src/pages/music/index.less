@@ -1,4 +1,97 @@
 @import '../../variables.less';
 
 .@{prefix}_music {
+  @topH: 160rpx;
+  &-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 1rpx 8rpx @box-shadow-color;
+    height: @topH;
+
+    .content {
+      padding-left: 40rpx;
+      padding-right: 40rpx;
+      width: 100%;
+      .form {
+        margin-bottom: 10rpx;
+        width: 100%;
+        height: auto;
+        display: block;
+        .search-input {
+          border: 1rpx solid #aaa;
+          border-radius: 8rpx;
+          padding: 5rpx 10rpx;
+          font-size: 24rpx;
+        }
+      }
+
+      .scroll-view_H {
+        white-space: nowrap;
+        font-size: 24rpx;
+        color: #333;
+        width: 100%;
+        height: 60rpx;
+
+        .item {
+          padding: 8rpx 10rpx;
+          height: 60rpx;
+          display: inline-block;
+          margin-left: 10rpx;
+          display: inline-flex;
+          align-items: center;
+          text-align: center;
+
+          &.tag-active {
+            color: @primary-color;
+          }
+        }
+      }
+    }
+  }
+
+  &-container {
+    padding-top: @topH + 8rpx;
+  }
+
+  &-list {
+    display: flex;
+    flex-wrap: wrap;
+
+    .item {
+      width: 33.333%;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      margin-bottom: 20rpx;
+
+      @coverH: 226rpx;
+      .cover {
+        height: @coverH;
+        width: 90%;
+        image {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .desc {
+        font-size: 24rpx;
+        color: #000;
+        padding: 10rpx 0;
+        display: flex;
+
+        .title {
+          height: 34rpx;
+          overflow: hidden;
+        }
+        .rating {
+          color: @rating-color;
+          margin-left: 10rpx;
+        }
+      }
+    }
+  }
 }
