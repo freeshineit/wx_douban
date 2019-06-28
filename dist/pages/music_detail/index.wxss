@@ -1,0 +1,83 @@
+.db_book_detail-top {
+  height: 500rpx;
+}
+.db_book_detail-top .content {
+  height: 440rpx;
+  padding-top: 150rpx;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.db_book_detail-top .content:after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: inherit;
+  -webkit-filter: blur(4px);
+          filter: blur(4px);
+  z-index: 0;
+}
+.db_book_detail-top .content .cover {
+  height: 350rpx;
+  width: 250rpx;
+  position: absolute;
+  bottom: -60rpx;
+  left: 40rpx;
+  z-index: 2;
+  box-shadow: 0px 0px 10px #666;
+  border-radius: 8rpx;
+  overflow: hidden;
+}
+.db_book_detail-top .content .cover image {
+  height: 350rpx;
+  width: 250rpx;
+}
+.db_book_detail-top .content .desc {
+  padding-left: 310rpx;
+  padding-right: 40rpx;
+  font-size: 24rpx;
+  color: #666;
+  position: absolute;
+  width: 100%;
+  z-index: 3;
+  color: #fff;
+  left: 0;
+  top: 150rpx;
+  text-shadow: #666;
+}
+.db_book_detail-top .content .desc .title {
+  font-size: 28rpx;
+  margin-bottom: 10rpx;
+}
+.db_book_detail-top .content .desc .authors {
+  display: flex;
+  margin-bottom: 10rpx;
+}
+.db_book_detail-top .content .desc .origin_title,
+.db_book_detail-top .content .desc .pubdate,
+.db_book_detail-top .content .desc .series {
+  margin-bottom: 10rpx;
+}
+.db_book_detail-top .content .desc .star {
+  color: #e09015;
+}
+.db_book_detail-container {
+  font-size: 28rpx;
+}
+.db_book_detail-container .detail {
+  padding-top: 40rpx;
+}
+.db_book_detail-container .detail .section-title {
+  margin-bottom: 20rpx;
+  padding: 0 30rpx;
+}
+.db_book_detail-container .detail .summary,
+.db_book_detail-container .detail .catalog {
+  margin-bottom: 40rpx;
+  padding: 0 30rpx;
+  color: #666;
+}

@@ -1,12 +1,24 @@
 <view class="db_music">
     <view class="db_music-top">
-        <view class="left">
-            <view class="title">music</view>
-            <view class="search" bind:tap="handleLinkSearch">search</view>
+        <view class="content">
+            <form class="form">
+                <input name="q" class="search-input" placeholder="搜索音乐" bindconfirm="handleformSubmit" />
+            </form>
         </view>
-        <view class="right"></view>
     </view>
     <view class="db_music-container">
-        <view>1</view>
+        <view class="db_music-list">
+            <view class="item db_music-item" wx:for="{{musics}}" wx:for-item="item" wx:key="{{item.id}}" data-id="{{item.id}}" bindtap="handeLinkDetail">
+                <view class="cover">
+                    <image style="background-color: #eeeeee;" mode="aspectFill" src="{{item.image}}"></image>
+                </view>
+                <view class="desc">
+                    <view class="title" title="{{item.title}}">{{item.title}}</view>
+                    <view class="rating">{{item.rating.average}}</view>
+                </view>
+            </view>
+        </view>
+        <view wx:if="{{loading}}">loading...</view>
+        <view wx:if="{{start + count > totil}}">没有更多了</view>
     </view>
 </view>

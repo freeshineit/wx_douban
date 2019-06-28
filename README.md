@@ -139,8 +139,8 @@ npm run build
 
 ### music api
 
-- [ ] /v2/music/:id
-- [ ] /v2/music/search
+- [x] /v2/music/:id
+- [x] /v2/music/search
 - [ ] /v2/music/:id/tags
 - [ ] /v2/music/reviews [POST]
 - [ ] /v2/music/review/:id [PUT]

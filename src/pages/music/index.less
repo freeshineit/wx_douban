@@ -1,4 +1,67 @@
 @import '../../variables.less';
 
 .@{prefix}_music {
+  @topH: 80rpx;
+  &-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 1rpx 8rpx @box-shadow-color;
+    height: @topH;
+    display: flex;
+    align-items: center;
+
+    .content {
+      padding-left: 40rpx;
+      padding-right: 40rpx;
+      width: 100%;
+      .form {
+        .search-input {
+          border: 1rpx solid #aaa;
+          border-radius: 8rpx;
+          padding: 5rpx 10rpx;
+          font-size: 24rpx;
+        }
+      }
+    }
+  }
+
+  &-container {
+    padding-top: @topH + 8rpx;
+  }
+
+  &-list {
+    display: flex;
+    flex-wrap: wrap;
+
+    .item {
+      width: 44%;
+      margin: 0rpx 3% 30rpx;
+      .cover {
+        height: 474rpx;
+        image {
+          width: 100%;
+          height: 474rpx;
+        }
+      }
+
+      .desc {
+        font-size: 24rpx;
+        color: #000;
+        padding: 10rpx 0;
+        display: flex;
+
+        .title {
+          height: 34rpx;
+          overflow: hidden;
+        }
+        .rating {
+          color: @rating-color;
+          margin-left: 10rpx;
+        }
+      }
+    }
+  }
 }
