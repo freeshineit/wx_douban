@@ -3,6 +3,7 @@
     "pages/book/index",
     "pages/book_detail/index",
     "pages/movie/index",
+    "pages/movie_search/index",
     "pages/music/index",
     "pages/music_detail/index",
     "pages/profile/index",
