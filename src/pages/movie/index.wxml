@@ -1,10 +1,44 @@
-<view class="db_book_detail">
-    <view class="db_book_detail-top">
-        <view class="left">
-            <view class="title">music detail</view>
+<view class="db_movie">
+    <view class="db_movie-top">
+        <view class="content">
+            <view class="search" bindtap='handleLinkSearch'>搜索电影</view>
+            <!-- <scroll-view class="scroll-view_H" scroll-x>
+                <view data-tag="{{item}}" wx:for="{{tags}}" wx:key="{{item}}" class="item {{query.tag == item?'tag-active' : ''}}" bindtap="handeChangeTag">
+                    {{item}}
+                </view>
+            </scroll-view> -->
         </view>
     </view>
-    <view class="db_book_detail-container">
-        <view>1</view>
+    <view class="db_movie-container">
+        <view class="db_movie-section">
+            <view class="db_movie-tabs">
+                <view class="tab-item hot {{currentTab1 == 0? 'active': ''}}" data-current='0' bindtap="handleTabsChange1">
+                    正在热映
+                </view>
+                <view class="tab-item theaters {{currentTab1 == 1? 'active': ''}}" data-current='1'>
+                    即将上映
+                </view>
+                <view class="nav-link" wx:if='currentTab1 == 0'>
+                    <view>观影指南</view>
+                    <view>全部</view>
+                </view>
+                <view class="nav-link" wx:if='currentTab1 == 1'>
+                    <view>观影指南</view>
+                    <view>全部</view>
+                </view>
+            </view>
+            <view class="db_movie-list">
+                <!-- <view> -->
+                <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+                    <block wx:for="{{imgUrls}}">
+                        <swiper-item>
+                            <image src="{{item}}" class="slide-image" width="355" height="150" />
+                            <Movie movie="{{}}" />
+                        </swiper-item>
+                    </block>
+                </swiper>
+                <!-- </view> -->
+            </view>
+        </view>
     </view>
 </view>
