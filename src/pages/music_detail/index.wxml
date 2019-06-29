@@ -1,27 +1,17 @@
-<view class="db_book_detail">
-    <view class="db_book_detail-top">
-        <view class="content" style="background-image:url('{{detail.images.small}}')">
+<view class="db_music_detail">
+    <view class="db_music_detail-top">
+        <view class="content" style="background-image:url('{{detail.image}}')">
             <!-- 书籍封面 -->
             <view class="cover">
-                <image src="{{detail.images.small}}" />
+                <image src="{{detail.image}}" />
             </view>
             <view class="desc">
                 <view class="title">{{detail.title}}</view>
-                <view class="authors">
-                    <view class="author-name" wx:for="{{detail.author}}" wx:key="{{item}}">
-                        {{item}}
-                    </view>
-                </view>
-                <view class="origin_title" wx:if="{{detail.origin_title}}">
-                    {{detail.origin_title}}
-                </view>
-                <view class="pubdate">{{detail.publisher}} / {{detail.pubdate}}</view>
-                <view class="series">{{detail.series.title}}</view>
-                <view class="star">{{detail.rating.average}}</view>
+                <view class="">{{detail.summary}}</view>
             </view>
         </view>
     </view>
-    <view class="db_book_detail-container">
+    <view class="db_music_detail-container">
         <view class="detail">
             <!-- <view class="section-title">内容简介</view> -->
             <!-- <view class="summary">{{detail.summary}}</view> -->
