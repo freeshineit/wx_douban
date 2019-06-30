@@ -12,30 +12,108 @@
     <view class="db_movie-container">
         <view class="db_movie-section">
             <view class="db_movie-tabs">
-                <view class="tab-item hot {{currentTab1 == 0? 'active': ''}}" data-current='0' bindtap="handleTabsChange1">
-                    正在热映
+                <view class="tabs">
+                    <view class="tab-item in-theaters {{currentTab1 == 0? 'active': ''}}" data-current='0' data-type="1" bindtap="handleTabsChange">
+                        正在热映
+                    </view>
+                    <view class="tab-item coming-soon {{currentTab1 == 1? 'active': ''}}" data-current='1' data-type="1" bindtap="handleTabsChange">
+                        即将上映
+                    </view>
                 </view>
-                <view class="tab-item theaters {{currentTab1 == 1? 'active': ''}}" data-current='1'>
-                    即将上映
-                </view>
-                <view class="nav-link" wx:if='currentTab1 == 0'>
-                    <view>观影指南</view>
-                    <view>全部</view>
-                </view>
-                <view class="nav-link" wx:if='currentTab1 == 1'>
-                    <view>观影指南</view>
-                    <view>全部</view>
+                <view class="nav-link">
+                    <navigator url="../movie_list/index?type=intheaters" class="nav" wx:if="currentTab1 == 0">
+                        <view class="label">观影指南</view>
+                        <view>全部{{inTheatersTotal}}</view>
+                    </navigator>
+                    <navigator url="../movie_list/index?type=comingsoon" class="nav" wx:else>
+                        <view>观影指南</view>
+                        <view>全部{{comingSoonsTotal}}</view>
+                    </navigator>
                 </view>
             </view>
             <view class="db_movie-list">
                 <!-- <view> -->
-                <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-                    <block wx:for="{{imgUrls}}">
-                        <swiper-item>
-                            <image src="{{item}}" class="slide-image" width="355" height="150" />
-                            <Movie movie="{{}}" />
-                        </swiper-item>
-                    </block>
+                <swiper class="swiper" current="{{currentTab1}}" data-type='1' bindchange="handleSwiperChange">
+                    <swiper-item class="swiper-item">
+                        <view class="movie-list">
+                            <block wx:for="{{inTheaters}}" wx:key="{{item.id}}">
+                                <Movie movie="{{item}}" />
+                            </block>
+                        </view>
+                    </swiper-item>
+                    <swiper-item class="swiper-item">
+                        <view class="movie-list">
+                            <block wx:for="{{comingSoons}}" wx:key="{{item.id}}">
+                                <Movie movie="{{item}}" />
+                            </block>
+                        </view>
+                    </swiper-item>
+                </swiper>
+                <!-- </view> -->
+            </view>
+        </view>
+        <!-- section -->
+        <view class="db_movie-section">
+            <view class="db_movie-tabs">
+                <view class="tabs">
+                    <view class="tab-item {{currentTab2 == 0? 'active': ''}}" data-current='0' data-type="2" bindtap="handleTabsChange">
+                        Top250
+                    </view>
+                    <view class="tab-item {{currentTab2 == 1? 'active': ''}}" data-current='1' data-type="2" bindtap="handleTabsChange">
+                        口碑榜
+                    </view>
+                </view>
+            </view>
+            <view class="db_movie-list">
+                <!-- <view> -->
+                <swiper class="swiper" current="{{currentTab2}}" data-type='2' bindchange="handleSwiperChange">
+                    <swiper-item class="swiper-item">
+                        <view class="movie-list">
+                            <block wx:for="{{top250s}}" wx:key="{{item.id}}">
+                                <Movie movie="{{item}}" />
+                            </block>
+                        </view>
+                    </swiper-item>
+                    <swiper-item class="swiper-item">
+                        <view class="movie-list">
+                            <block wx:for="{{weeklys}}" wx:key="{{item.id}}">
+                                <Movie movie="{{item}}" />
+                            </block>
+                        </view>
+                    </swiper-item>
+                </swiper>
+                <!-- </view> -->
+            </view>
+        </view>
+        <!-- section -->
+        <view class="db_movie-section">
+            <view class="db_movie-tabs">
+                <view class="tabs">
+                    <view class="tab-item {{currentTab3 == 0? 'active': ''}}" data-current='0' data-type="3" bindtap="handleTabsChange">
+                        北美票房榜
+                    </view>
+                    <view class="tab-item {{currentTab3 == 1? 'active': ''}}" data-current='1' data-type="3" bindtap="handleTabsChange">
+                        新片榜
+                    </view>
+                </view>
+            </view>
+            <view class="db_movie-list">
+                <!-- <view> -->
+                <swiper class="swiper" current="{{currentTab3}}" data-type='3' bindchange="handleSwiperChange">
+                    <swiper-item class="swiper-item">
+                        <view class="movie-list">
+                            <block wx:for="{{USBoxs}}" wx:key="{{item.id}}">
+                                <Movie movie="{{item}}" />
+                            </block>
+                        </view>
+                    </swiper-item>
+                    <swiper-item class="swiper-item">
+                        <view class="movie-list">
+                            <block wx:for="{{newMovies}}" wx:key="{{item.id}}">
+                                <Movie movie="{{item}}" />
+                            </block>
+                        </view>
+                    </swiper-item>
                 </swiper>
                 <!-- </view> -->
             </view>

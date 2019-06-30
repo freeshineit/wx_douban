@@ -1,2 +1,9 @@
-<!-- src/components/movie/index.wxml -->
-<text>src/components/movie/index.wxml</text>
+<view class="db_movie_com">
+    <view class="image">
+        <image mode="aspectFill" src="{{movie.images.small}}" />
+    </view>
+    <view class="bottom">
+        <view class="title">{{movie.title}}</view>
+        <view class="rating">{{movie.rating.average}}</view>
+    </view>
+</view>

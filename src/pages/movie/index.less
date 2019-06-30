@@ -2,6 +2,8 @@
 
 .@{prefix}_movie {
   @topH: 80rpx;
+  background: #fff;
+
   &-top {
     height: @topH;
     background: #fff;
@@ -18,6 +20,83 @@
     }
   }
 
+  &-tabs {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1rpx solid #efefef;
+    font-size: 32rpx;
+    align-items: center;
+    margin-bottom: 20rpx;
+    padding: 0 20rpx;
+    .tabs {
+      display: flex;
+
+      .tab-item {
+        padding: 10rpx 5rpx 20rpx;
+        position: relative;
+        color: #666;
+
+        &.active {
+          color: #000;
+          &:after {
+            content: '';
+            position: absolute;
+            bottom: -1rpx;
+            left: 0;
+            width: 100%;
+            height: 4rpx;
+            background: #000;
+          }
+        }
+      }
+    }
+
+    .nav-link {
+      font-size: 24rpx;
+      color: #666;
+
+      .nav {
+        display: flex;
+        align-items: center;
+        .label {
+          font-size: 18rpx;
+          color: #fff;
+          background: red;
+          font-weight: 500;
+          border-radius: 20rpx;
+          height: 30rpx;
+          padding: 2rpx 10rpx;
+          margin-right: 10rpx;
+        }
+      }
+    }
+  }
+
   &-list {
+    .swiper {
+      height: 1188rpx;
+      &-item {
+        width: 100%;
+        height: 700rpx;
+        margin-bottom: 30rpx;
+
+        .movie-list {
+          display: block;
+          display: flex;
+          flex-wrap: wrap;
+          padding-left: 25rpx;
+          padding-right: 25rpx;
+
+          movie {
+            width: 220rpx;
+            margin-bottom: 20rpx;
+            margin-right: 20rpx;
+            &:nth-child(3n) {
+              margin-right: 0;
+            }
+          }
+        }
+      }
+    }
   }
 }
