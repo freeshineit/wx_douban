@@ -1,7 +1,6 @@
 //index.js
 //获取应用实例
 
-// import Request from '../../utils/request'
 import {
   top250Api,
   USBoxApi,

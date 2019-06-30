@@ -2,11 +2,6 @@
     <view class="db_movie-top">
         <view class="content">
             <view class="search" bindtap='handleLinkSearch'>搜索电影</view>
-            <!-- <scroll-view class="scroll-view_H" scroll-x>
-                <view data-tag="{{item}}" wx:for="{{tags}}" wx:key="{{item}}" class="item {{query.tag == item?'tag-active' : ''}}" bindtap="handeChangeTag">
-                    {{item}}
-                </view>
-            </scroll-view> -->
         </view>
     </view>
     <view class="db_movie-container">
@@ -21,7 +16,7 @@
                     </view>
                 </view>
                 <view class="nav-link">
-                    <navigator url="../movie_list/index?type=intheaters" class="nav" wx:if="currentTab1 == 0">
+                    <navigator url="../movie_list/index?type=intheaters" class="nav" wx:if="{{currentTab1 == 0}}">
                         <view class="label">观影指南</view>
                         <view>全部{{inTheatersTotal}}</view>
                     </navigator>
@@ -62,6 +57,12 @@
                     <view class="tab-item {{currentTab2 == 1? 'active': ''}}" data-current='1' data-type="2" bindtap="handleTabsChange">
                         口碑榜
                     </view>
+                </view>
+                <view class="nav-link">
+                    <navigator url="../movie_list/index?type=top250" class="nav" wx:if="{{currentTab2 == 0}}">
+                        <view class="label">观影指南</view>
+                        <view>全部{{inTheatersTotal}}</view>
+                    </navigator>
                 </view>
             </view>
             <view class="db_movie-list">

@@ -1,1 +1,9 @@
-<view>movie list</view>
+<view class="db_movie_list">
+    <view class="db_movie_list-container">
+        <view class="movie-list">
+            <block wx:for="{{list}}" wx:key="{{index}}">
+                <Movie movie="{{item}}" />
+            </block>
+        </view>
+    </view>
+</view>

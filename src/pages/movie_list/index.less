@@ -1,4 +1,24 @@
 @import '../../variables.less';
 
 .@{prefix}_movie_list {
+  padding-top: 40rpx;
+  background: #fff;
+  min-height: 100vh;
+
+  .movie-list {
+    display: block;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 25rpx;
+    padding-right: 25rpx;
+
+    movie {
+      width: 220rpx;
+      margin-bottom: 20rpx;
+      margin-right: 20rpx;
+      &:nth-child(3n) {
+        margin-right: 0;
+      }
+    }
+  }
 }
