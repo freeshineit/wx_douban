@@ -1,4 +1,40 @@
 @import '../../variables.less';
 
-.db_movie_search {
+.@{prefix}_movie_search {
+  @topH: 80rpx;
+  &-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 1rpx 8rpx @box-shadow-color;
+    height: @topH;
+    padding: 8rpx 20rpx 7rpx;
+    .search-input {
+      border: 1rpx solid #aaa;
+      border-radius: 8rpx;
+      padding: 5rpx 10rpx;
+      font-size: 24rpx;
+    }
+  }
+
+  &-container {
+    .movie-list {
+      display: block;
+      display: flex;
+      flex-wrap: wrap;
+      padding-left: 25rpx;
+      padding-right: 25rpx;
+
+      movie {
+        width: 220rpx;
+        margin-bottom: 20rpx;
+        margin-right: 20rpx;
+        &:nth-child(3n) {
+          margin-right: 0;
+        }
+      }
+    }
+  }
 }

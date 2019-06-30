@@ -1,1 +1,14 @@
-<view class="db_movie_search">db_movie_search</view>
+<view class="db_movie_search">
+    <view class="db_movie_search-top">
+        <form class="form">
+            <input name="q" focus="{{true}}" class="search-input" placeholder="搜索音乐" bindconfirm="handleformSubmit" />
+        </form>
+    </view>
+    <view class="db_movie_search-container">
+        <view class="movie-list">
+            <block wx:for="list" wx:key="{{index}}">
+                <Movie movie="{{item}}" />
+            </block>
+        </view>
+    </view>
+</view>
