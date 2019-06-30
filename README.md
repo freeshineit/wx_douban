@@ -98,11 +98,11 @@ npm run build
 ### movie api
 
 - [x] /v2/movie/in_theaters
-- [ ] /v2/movie/top250
-- [ ] /v2/movie/us_box
-- [ ] /v2/movie/weekly
-- [ ] /v2/movie/new_movies
-- [ ] /v2/movie/coming_soon
+- [x] /v2/movie/top250
+- [x] /v2/movie/us_box
+- [x] /v2/movie/weekly
+- [x] /v2/movie/new_movies
+- [x] /v2/movie/coming_soon
 - [ ] /v2/movie/subject/:id
 - [ ] /v2/movie/celebrity/:id
 - [ ] /v2/movie/subject/:id/photos
