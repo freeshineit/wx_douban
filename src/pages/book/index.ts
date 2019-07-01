@@ -2,13 +2,17 @@
 //获取应用实例
 
 import Request from '../../utils/request'
+import { showLoading, hideLoading } from '../../utils/util'
 Page({
   data: {
     books: [],
     total: 0,
-    start: 0,
-    count: 10,
-    q: '',
+    query: {
+      q: '经典',
+      //   tag: '经典',
+      start: 0,
+      count: 10
+    },
     loading: false
   },
   //   跳转到详情页
@@ -19,9 +23,14 @@ Page({
     })
   },
   handleformSubmit(event: any) {
+    const { query } = this.data
+    const q = event.detail.value
+    if (q === '' || q == undefined) {
+      query['q'] = '经典'
+    }
     this.setData!(
       {
-        q: event.detail.value,
+        query: Object.assign(query, { q }),
         start: 0,
         books: []
       },
@@ -31,31 +40,28 @@ Page({
     )
   },
   getBooks() {
-    const { books, start, count, q } = this.data
-    if (q === '' || q === undefined) {
-      console.error('搜索必须要有内容')
-      return
-    }
-    this.setData!({
-      loading: true
-    })
-    Request.get(`/v2/book/search`, {
-      q: q,
-      start,
-      count
-    }).then((res: any) => {
+    const { books, query } = this.data
+    query.start == 0
+      ? showLoading()
+      : this.setData!({
+          loading: true
+        })
+    Request.get(`/v2/book/search`, query).then((res: any) => {
+      query.start == 0 && hideLoading()
       this.setData!({
         books: books.concat(res.data.books),
         total: res.data.total,
-        start: count + start,
+        query: Object.assign(query, { start: query.count + query.start }),
         loading: false
       })
     })
   },
-  onLoad() {},
+  onLoad() {
+    this.getBooks()
+  },
   onReachBottom() {
-    const { loading, start, count, total } = this.data
-    if (!loading && start + count < total) {
+    const { loading, query, total } = this.data
+    if (!loading && query.start < total) {
       this.getBooks()
     }
   }

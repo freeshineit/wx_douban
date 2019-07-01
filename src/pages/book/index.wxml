@@ -2,7 +2,7 @@
     <view class="db_book-top">
         <view class="content">
             <form class="form">
-                <input name="q" class="search-input" placeholder="搜索书籍" bindconfirm="handleformSubmit" />
+                <input name="q" class="search-input" placeholder="经典书籍" bindconfirm="handleformSubmit" />
             </form>
         </view>
     </view>
@@ -18,7 +18,7 @@
                 </view>
             </view>
         </view>
-        <view wx:if="{{loading}}">loading...</view>
-        <view wx:if="{{start + count > totil}}">没有更多了</view>
+        <BottomLoading wx:if="{{loading}}" />
+        <!-- <view wx:if="{{start + count > totil}}">没有更多了</view> -->
     </view>
 </view>
