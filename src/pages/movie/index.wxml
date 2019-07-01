@@ -21,7 +21,7 @@
                         <view>全部{{inTheatersTotal}}</view>
                     </navigator>
                     <navigator url="../movie_list/index?type=comingsoon" class="nav" wx:else>
-                        <view>观影指南</view>
+                        <view class="label">观影指南</view>
                         <view>全部{{comingSoonsTotal}}</view>
                     </navigator>
                 </view>
