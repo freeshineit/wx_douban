@@ -1,5 +1,5 @@
 import { top250Api, comingSoonApi, inTheatersApi } from '../../utils/api'
-
+import { showLoading, hideLoading } from '../../utils/util'
 Page({
   data: {
     list: [],
@@ -7,8 +7,9 @@ Page({
     total: 0,
     query: {
       start: 0,
-      count: 21
-    }
+      count: 15
+    },
+    loading: false
   },
   switchApi() {
     const { type } = this.data
@@ -29,12 +30,12 @@ Page({
     wx.setNavigationBarTitle({
       title: '正在热映'
     })
+    query.start == 0 && showLoading()
+    this.setData!({
+      loading: true
+    })
     inTheatersApi(query).then((res: any) => {
-      console.log(res.data.subjects)
-      this.setData!({
-        list: res.data.subjects,
-        total: res.data.total
-      })
+      this.setMovieList(res.data)
     })
   },
   getComingSoon() {
@@ -42,11 +43,12 @@ Page({
     wx.setNavigationBarTitle({
       title: '即将上映'
     })
+    query.start == 0 && showLoading()
+    this.setData!({
+      loading: true
+    })
     comingSoonApi(query).then((res: any) => {
-      this.setData!({
-        list: res.data.subjects,
-        total: res.data.total
-      })
+      this.setMovieList(res.data)
     })
   },
   getTop250() {
@@ -54,12 +56,23 @@ Page({
     wx.setNavigationBarTitle({
       title: 'top250'
     })
-    top250Api(query).then((res: any) => {
-      this.setData!({
-        list: res.data.subjects,
-        total: res.data.total
-      })
+    query.start == 0 && showLoading()
+    this.setData!({
+      loading: true
     })
+    top250Api(query).then((res: any) => {
+      this.setMovieList(res.data)
+    })
+  },
+  setMovieList(data: any) {
+    const { query, list } = this.data
+    this.setData!({
+      list: list.concat(data.subjects),
+      total: data.total,
+      query: Object.assign(query, { start: query.count + query.start }),
+      loading: false
+    })
+    hideLoading()
   },
   onLoad(options: any) {
     const type = options.type
@@ -74,5 +87,11 @@ Page({
         this.switchApi()
       }
     )
+  },
+  onReachBottom() {
+    const { loading, query, total } = this.data
+    if (!loading && query.start < total) {
+      this.switchApi()
+    }
   }
 })
