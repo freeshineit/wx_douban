@@ -1,6 +1,7 @@
 {
   "enablePullDownRefresh": true,
   "usingComponents": {
-    "Movie": "../../components/movie/index"
+    "Movie": "../../components/movie/index",
+    "BottomLoading": "../../components/bottom_loading/index"
   }
 }

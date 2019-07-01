@@ -30,10 +30,7 @@ Page({
     wx.setNavigationBarTitle({
       title: '正在热映'
     })
-    query.start == 0 && showLoading()
-    this.setData!({
-      loading: true
-    })
+    this.firstLoading(query)
     inTheatersApi(query).then((res: any) => {
       this.setMovieList(res.data)
     })
@@ -43,10 +40,7 @@ Page({
     wx.setNavigationBarTitle({
       title: '即将上映'
     })
-    query.start == 0 && showLoading()
-    this.setData!({
-      loading: true
-    })
+    this.firstLoading(query)
     comingSoonApi(query).then((res: any) => {
       this.setMovieList(res.data)
     })
@@ -56,13 +50,19 @@ Page({
     wx.setNavigationBarTitle({
       title: 'top250'
     })
-    query.start == 0 && showLoading()
-    this.setData!({
-      loading: true
-    })
+    this.firstLoading(query)
     top250Api(query).then((res: any) => {
       this.setMovieList(res.data)
     })
+  },
+  firstLoading(query: any) {
+    if (query.start == 0) {
+      showLoading()
+    } else {
+      this.setData!({
+        loading: true
+      })
+    }
   },
   setMovieList(data: any) {
     const { query, list } = this.data
