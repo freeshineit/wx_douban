@@ -1,1 +1,3 @@
-<view class="db_bottom_loading_com">db_bottom_loading_com</view>
+<view class="db_bottom_loading_com">
+    <image src="../../images/loading.gif" />
+</view>
