@@ -23,7 +23,6 @@
                 </view>
             </view>
         </view>
-        <view wx:if="{{loading && musics.length > 0}}">loading...</view>
-        <view wx:if="{{start + count > totil}}">没有更多了</view>
+        <BottomLoading wx:if="{{loading}}" />
     </view>
 </view>

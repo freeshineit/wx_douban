@@ -3,12 +3,6 @@
 
 import Request from '../../utils/request'
 import { showLoading, hideLoading } from '../../utils/util'
-// interface ISearch {
-//   q?: string
-//   tag?: string
-//   count?: number
-//   start?: number
-// }
 
 Page({
   data: {
@@ -65,10 +59,13 @@ Page({
   },
   getMusics() {
     const { musics, query } = this.data
-    this.setData!({
-      loading: true
-    })
-    query.start == 0 && showLoading() // 第一次展示loading
+
+    query.start == 0
+      ? showLoading() // 第一次展示loading
+      : this.setData!({
+          loading: true
+        })
+
     Request.get(`/v2/music/search`, query).then((res: any) => {
       query.start == 0 && hideLoading()
       this.setData!({
