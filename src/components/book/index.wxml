@@ -1,2 +1,1 @@
-<!--src/components/book/index.wxml-->
-<text>src/components/book/index.wxml</text>
+<view class="db_bottom_loading_com">db_bottom_loading_com</view>
