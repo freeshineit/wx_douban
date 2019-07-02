@@ -1,7 +1,7 @@
 <view class="db_movie_search">
     <view class="db_movie_search-top">
         <form class="form">
-            <input name="q" focus="{{true}}" class="search-input" placeholder="搜索音乐" bindconfirm="handleformSubmit" />
+            <input name="q" focus="{{true}}" class="search-input" placeholder="搜索视频" bindconfirm="handleformSubmit" />
         </form>
     </view>
     <view class="db_movie_search-container">
